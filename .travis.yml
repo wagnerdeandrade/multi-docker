@@ -17,9 +17,9 @@ after_sucess:
   # log in to the docker CLI
   - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --pasword-stdin
   # take those and push to docker hub
-  - docker push wagnerrogeriodeandrade/multi-client
-  - docker push wagnerrogeriodeandrade/multi-nginx
-  - docker push wagnerrogeriodeandrade/multi-server
-  - docker push wagnerrogeriodeandrade/multi-worker
+  - docker push wagnerdeandrade/multi-client
+  - docker push wagnerdeandrade/multi-nginx
+  - docker push wagnerdeandrade/multi-server
+  - docker push wagnerdeandrade/multi-worker
 
 
