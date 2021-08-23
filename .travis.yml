@@ -4,23 +4,23 @@ services:
   - docker
 
 before_install:
-  - docker build -t wagnerdeandrade/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t wagnerrogeriodeandrade/react-test -f ./client/Dockerfile.dev ./client
  
 script:
-  - docker run -e CI=true wagnerdeandrade/react-test npm test
+  - docker run -e CI=true wagnerrogeriodeandrade/react-test npm test
 
 after_sucess:
-  - docker build -t wagnerdeandrade/multi-client ./client
-  - docker build -t wagnerdeandrade/multi-nginx ./nginx
-  - docker build -t wagnerdeandrade/multi-server ./server
-  - docker build -t wagnerdeandrade/multi-worker ./worker
+  - docker build -t wagnerrogeriodeandrade/multi-client ./client
+  - docker build -t wagnerrogeriodeandrade/multi-nginx ./nginx
+  - docker build -t wagnerrogeriodeandrade/multi-server ./server
+  - docker build -t wagnerrogeriodeandrade/multi-worker ./worker
   # log in to the docker CLI
   - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
 
   # take those and push to docker hub
-  - docker push wagnerdeandrade/multi-client
-  - docker push wagnerdeandrade/multi-nginx
-  - docker push wagnerdeandrade/multi-server
-  - docker push wagnerdeandrade/multi-worker
+  - docker push wagnerrogeriodeandrade/multi-client
+  - docker push wagnerrogeriodeandrade/multi-nginx
+  - docker push wagnerrogeriodeandrade/multi-server
+  - docker push wagnerrogeriodeandrade/multi-worker
 
 
