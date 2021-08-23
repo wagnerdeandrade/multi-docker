@@ -15,7 +15,8 @@ after_sucess:
   - docker build -t wagnerdeandrade/multi-server ./server
   - docker build -t wagnerdeandrade/multi-worker ./worker
   # log in to the docker CLI
-  - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --pasword-stdin
+  - echo "$DOCKER_PWD" | docker login -u "$DOCKER_ID" --password-stdin
+
   # take those and push to docker hub
   - docker push wagnerdeandrade/multi-client
   - docker push wagnerdeandrade/multi-nginx
